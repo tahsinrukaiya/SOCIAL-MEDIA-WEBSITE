@@ -1,0 +1,21 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.img-thumbnail {
+    height: 40px;
+    width: 170px;
+}
+
+
+.post_photo {
+    display: block;
+    width: 350px;
+    height: 270px;
+}
+
+.img-profile {
+    height: 150px;
+    width: 160px;
+}

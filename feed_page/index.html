@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed Page || MedSci Insights</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script defer src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../dist/css/index.css">
+    <link rel="stylesheet" href="../css/customcss.css">
+    <!---Fonts links-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap" rel="stylesheet">
+</head>
+
+
+
+<body class="bg-secondary">
+    <!------NAVIGATION BAR------------------------------------------->
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+            <a class="logo" href="../index.html"><img src="../images/logo.JPG" class="img-fluid img-thumbnail" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-center" id="navbarNavAltMarkup">
+                <div class="navbar-nav px-4">
+                    <a class="nav-link text-secondary" href="../feed_page/index.html">Feed</a>
+                    <a class="nav-link text-secondary" href="../profile_page/index.html">Profile</a>
+                    <a class="nav-link text-secondary" href="../index.html">Log Out</a>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!----------------------------NEW POSTS--------------------->
+    <h4 class="text-primary text-center mt-5">Create a post</h4>
+    <div class="container sm mt-5 w-50">
+        <form>
+            <div class="form-group text-primary">
+                <label for="exampleFormControlInput1">Title</label>
+                <input type="title" class="form-control" id="exampleFormControlInput1" placeholder="Title of your post">
+            </div>
+            <div class="form-group pb-3 text-primary">
+                <label for="exampleFormControlTextarea1 ">Your Post</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+
+    <!-------DROPDOWN MENU------------>
+    <!-- Example single danger button -->
+    <div class="text-center mt-5 mb-5">
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Newest Posts
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Older posts</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Your Posts</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!----------------------------PREVIOUS POSTS--------------------->
+    <h4 class="text-primary text-center mt-5">Feed</h4>
+    <div class="container-md mt-5 w-75 d-flex justify-content-center align-items-center h-100 w-100">
+        <div class="d-grid gap-3 w-75">
+            <div class="p-2 bg-light border text-primary rounded">
+                <div class="container bg-primary pt-2 pb-1 rounded">
+                    <h6 class="text-secondary">Justin</h6>
+                </div>
+                <h6 class="pt-2">Advances in gene therapy and CRISPR technology</h6>
+                <div class="image">
+                    <img src="../images/dna-closely.jpg" class="post_photo mx-auto d-block pt-4 pb-4 ">
+                </div>
+                <p>Gene therapy involves introducing, repairing, or replacing genes
+                    to treat or prevent diseases. Researchers have made significant
+                    progress in using gene therapy to address various genetic disorders,
+                    such as certain types of inherited blindness, hemophilia,
+                    and muscular dystrophy.</p>
+                <button type="button" class="btn btn-outline-success btn-sm">Like</button>
+                <button type="button" class="btn btn-outline-success btn-sm">Comment</button>
+            </div>
+            <div class="p-2 bg-light border text-primary rounded">
+                <div class="container bg-primary pt-2 pb-1 rounded">
+                    <h6 class="text-secondary ">Don Smith</h6>
+                </div>
+                <h6 class="pt-2">Nanotechnology is being used in cancer treatment</h6>
+
+                <div class="image">
+                    <img src="../images/nano.jpg" class="post_photo mx-auto d-block pt-4 pb-4 ">
+                </div>
+                <p>Nanotechnology has shown promise in revolutionizing cancer
+                    treatment by providing targeted and more effective therapeutic approaches.
+                    Targeted Therapy: Nanoparticles can be designed to carry anticancer drugs directly to cancer cells,
+                    minimizing damage to healthy tissues. This targeted drug delivery can enhance the effectiveness
+                    of treatment while reducing side effects.
+                    Enhanced Permeability and Retention (EPR) Effect: Nanoparticles can take
+                    advantage of the EPR effect, which is the tendency of abnormal blood
+                    vessels around tumors to be leaky. This allows nanoparticles to
+                    accumulate preferentially in the tumor tissue.</p>
+                <button type="button" class="btn btn-outline-success btn-sm">Like</button>
+                <button type="button" class="btn btn-outline-success btn-sm">Comment</button>
+            </div>
+            <div class="p-2 bg-light border text-primary rounded">
+                <div class="container bg-primary pt-2 pb-1 rounded">
+                    <h6 class="text-secondary ">Kari Normenn</h6>
+                </div>
+                <h6 class="pt-2">Several COVID-19 vaccines had been developed and authorized for
+                    emergency use or approved for general use in various countries.</h6>
+
+                <div class="image">
+                    <img src="../images/covid.jpg" class="post_photo mx-auto d-block pt-4 pb-4 ">
+                </div>
+                <p>
+                    The Pfizer-BioNTech vaccine is an mRNA vaccine.
+                    It utilizes a small piece of the genetic material
+                    called messenger RNA (mRNA) to instruct cells in
+                    the body to produce a modified form of the spike
+                    protein found on the surface of the SARS-CoV-2 virus.
+                </p>
+                <button type="button" class="btn btn-outline-success btn-sm">Like</button>
+                <button type="button" class="btn btn-outline-success btn-sm">Comment</button>
+            </div>
+            <div class="p-2 bg-light border text-primary rounded">
+                <div class="container bg-primary pt-2 pb-1 rounded">
+                    <h6 class="text-secondary ">Istiaq Muhammed</h6>
+                </div>
+                <h6 class="pt-2"> Artificial Intelligence (AI) in Medicine</h6>
+                <div class="image">
+                    <img src="../images/ai.JPG" class="post_photo mx-auto d-block pt-4 pb-4 ">
+                </div>
+                <p>
+                    Artificial Intelligence (AI) is increasingly playing
+                    a transformative role in the medical sector, revolutionizing
+                    various aspects of healthcare delivery, research, and diagnostics.
+                    AI helps radiologists by automating repetitive tasks,
+                    providing quantitative measurements, and highlighting
+                    potential abnormalities in images.
+                </p>
+                <button type="button" class="btn btn-outline-success btn-sm">Like</button>
+                <button type="button" class="btn btn-outline-success btn-sm">Comment</button>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+
+</html>

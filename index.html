@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Page || MedSci Insights</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script defer src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./dist/css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-secondary">
+    <div class="container-md px-4">
+        <div class="row vw-80 gx-5">
+            <div class="col bg-primary vh-100 p-3">
+                <form class="position-relative top-50 start-50 translate-middle" action="./profile_page/index.html">
+                    <div class="mb-3 form-outline w-75 mx-auto">
+                        <h1 class="text-secondary text-center">Log In</h1>
+                        <label for="exampleInputEmail1" class="form-label">
+                            <h6>Email address</h6>
+                        </label>
+                        <input type="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" class="form-control"
+                            id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                    </div>
+                    <div class="mb-3 form-outline w-75 mx-auto">
+                        <label for="exampleInputPassword1" class="form-label">
+                            <h6>Password</h6>
+                        </label>
+                        <input type="password" class="form-control" pattern=".{8,}"
+                            title="Password must be more than 8 characters" required>
+                        <small class="w-100 text-end">Forgot password?</small>
+                    </div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button class="btn btn-success btn-md text-primary" role="button">Log
+                            In</button>
+                        <div class="small-text">
+                            <h6 class="text-active small">Don't have an account? <a><u>Sign up here</u></a></h6>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+
+            <div class="col bg-secondary vh-100 border border-left-0 border-primary p-3 d-none d-lg-block">
+                <img src="./images/logo.JPG" alt="" width="210" class="rounded mx-auto d-block mt-4">
+                <h1 class="text-primary position-relative top-50 start-50 translate-middle text-center">Welcome Back
+                </h1>
+                <h5 class="position-relative top-50 start-50 translate-middle text-center">
+                    A platform where researchers talk
+                    about breakthroughs in medicine</h5>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+
+</html>
