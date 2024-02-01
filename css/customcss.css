@@ -5,7 +5,7 @@
 
 .img-thumbnail {
     height: 40px;
-    width: 170px;
+    width: 175px;
 }
 
 
@@ -18,4 +18,14 @@
 .img-profile {
     height: 150px;
     width: 160px;
+}
+
+.rounded-circle {
+    height: 60px;
+    width: 60px;
+}
+
+.name {
+    display: inline-block;
+
 }
