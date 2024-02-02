@@ -1,4 +1,4 @@
-Second year assignment on css framework
+Second year assignment on css framework and advanced JavaScript
 
 
 Description
@@ -12,6 +12,8 @@ The site is build with
 HTML
 Bootstrap 
 SASS
+JS
+
 
 contact
 
