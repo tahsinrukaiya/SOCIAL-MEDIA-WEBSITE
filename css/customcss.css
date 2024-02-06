@@ -2,12 +2,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
 .img-thumbnail {
     height: 40px;
     width: 175px;
 }
-
 
 .post_photo {
     display: block;
@@ -15,11 +13,14 @@
     height: 270px;
 }
 
+/*---------------------profile picture on PROFILE PAGE--------------*/
 .img_profile {
     height: 150px;
     width: 160px;
 }
 
+
+/*---------------------profile picture on FEED PAGE--------------*/
 .profile_image_feed_page {
     height: 60px;
     width: 60px;
@@ -27,5 +28,4 @@
 
 .name {
     display: inline-block;
-
 }
