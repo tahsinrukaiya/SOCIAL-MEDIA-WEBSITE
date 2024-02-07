@@ -1,3 +1,50 @@
+const form = document.getElementById('form');
+const user_name = document.getElementById('user_name');
+const email_address = document.getElementById('email_address');
+const password = document.getElementById('password');
+const confirm_password = document.getElementById('confirm_password');
+
+
+const API_BASE_URL = 'https://api.noroff.dev/api/v1';
+
+function createUser() {
+
+    async function registerUser(url, data) {
+        try {
+            //making an api call
+            const postData = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            };
+
+            const response = await fetch(url, postData);
+            console.log(response);
+            const json = await response.json();
+            console.log(json);
+            return json;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    const user = {
+        name: user_name,
+        email: email_address,
+        password: password,
+    };
+
+    registerUser(`${API_BASE_URL}/social/auth/register`, user);
+}
+
+createUser();
+
+
+
+
+
+/*TRIAL WITH THE API V2----------------------
 const API_BASE = "https://v2.api.noroff.dev/";
 const API_AUTH = "/auth";
 const API_REGISTER = "/register";
@@ -54,56 +101,13 @@ async function registerUser(user_name, email_address, password) {
     });
 }
 
+async function registerUser() {
 
-
-
-
-
-/*TRIAL WITH THE API V1----------------------
-
-
-const form = document.getElementById('form');
-const user_name = document.getElementById('user_name');
-const email_address = document.getElementById('email_address');
-const password = document.getElementById('password');
-const confirm_password = document.getElementById('confirm_password');
-
-
-const API_BASE_URL = 'https://v2.api.noroff.dev';
-
-function createUser() {
-
-    async function registerUser(url, data) {
-        try {
-            //making an api call
-            const postData = {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            };
-
-            const response = await fetch(url, postData);
-            console.log(response);
-            const json = await response.json();
-            console.log(json);
-            return json;
-        } catch (error) {
-            console.log(error);
-        }
-    }
-    const user = {
-        name: user_name,
-        email: email_address,
-        password: password,
-    };
-
-    registerUser(`${API_BASE_URL}/auth/register`, user);
 }
 
-createUser();
 */
+
+
 
 
 
