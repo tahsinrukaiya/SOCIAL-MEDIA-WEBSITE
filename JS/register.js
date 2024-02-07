@@ -1,4 +1,4 @@
-const API_BASE = "https://v2.api.noroff.dev";
+const API_BASE = "https://v2.api.noroff.dev/";
 const API_AUTH = "/auth";
 const API_REGISTER = "/register";
 const API_LOGIN = "/login";
