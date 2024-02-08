@@ -20,7 +20,8 @@
     <div class="container-md px-4">
         <div class="row vw-80 gx-5">
             <div class="col bg-primary vh-100 p-3">
-                <form class="position-relative top-50 start-50 translate-middle" action="../logIn/index.html">
+                <form class="position-relative top-50 start-50 translate-middle" id="registerForm"
+                    action="../logIn/logIn.html">
                     <div class="mb-3 form-outline w-75 mx-auto">
                         <h1 class="text-secondary text-center">Create an account</h1>
                         <label for="exampleInputEmail1" class="form-label">
@@ -53,8 +54,7 @@
                             title="Password must be more than 8 characters" required>
                     </div>
                     <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-success btn-md text-primary" onclick="createUser()"
-                            role="button">Register
+                        <button class="btn btn-success btn-md text-primary" role="button">Register
                         </button>
                     </div>
                 </form>

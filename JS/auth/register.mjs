@@ -1,13 +1,16 @@
 import { API_BASE_URL } from "./constants.mjs";
-import { form } from "./constants.mjs";
+import { registerForm } from "./constants.mjs";
 import { user_name } from "./constants.mjs";
 import { email_address } from "./constants.mjs";
 import { password } from "./constants.mjs";
 
 
-//Function to create a user on Noroff API
-function createUser() {
+if (registerForm) {
+    registerForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+    })
 
+    //Function to create a user on Noroff API
     async function registerUser(url, data) {
         try {
             //making an api call
@@ -18,16 +21,16 @@ function createUser() {
                 },
                 body: JSON.stringify(data),
             };
-
             const response = await fetch(url, postData);
             console.log(response);
             const json = await response.json();
             console.log(json);
             return json;
         } catch (error) {
-            console.log(error);
+            console.error("something went wrong!");
         }
     }
+
     const user = {
         name: user_name.value,
         email: email_address.value,
@@ -35,9 +38,23 @@ function createUser() {
     };
 
     registerUser(`${API_BASE_URL}/social/auth/register`, user);
+    alert("SUCCESSFUL!");
 }
 
-createUser();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
