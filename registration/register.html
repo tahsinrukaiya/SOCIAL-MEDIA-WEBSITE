@@ -7,10 +7,10 @@
     <title>User Registation || MedSci Insights</title>
     <meta name="description" content="Registration page of MedSci Insights">
     <meta name="author" content="Rukaiya Tahsin">
-    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <script defer src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script defer src="./JS/register.js"></script>
-    <link rel="stylesheet" href="./dist/css/index.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script defer src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="module" src="../JS/auth/register.mjs"></script>
+    <link rel="stylesheet" href="../dist/css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap" rel="stylesheet">
@@ -20,26 +20,29 @@
     <div class="container-md px-4">
         <div class="row vw-80 gx-5">
             <div class="col bg-primary vh-100 p-3">
-                <form class="position-relative top-50 start-50 translate-middle" action="./profile_page/index.html">
+                <form class="position-relative top-50 start-50 translate-middle" action="../logIn/index.html">
                     <div class="mb-3 form-outline w-75 mx-auto">
                         <h1 class="text-secondary text-center">Create an account</h1>
                         <label for="exampleInputEmail1" class="form-label">
                             <h6>Username</h6>
                         </label>
-                        <input type="text" id="user_name" class="form-control" placeholder="Full name">
+                        <input type="text" id="user_name" class="form-control" required pattern="^[\w]+$"
+                            title="The name must not contain punctuation symbols except underscore (_)" placeholder=" Full
+                            name">
                     </div>
                     <div class="mb-3 form-outline w-75 mx-auto">
                         <label for="exampleInputEmail1" class="form-label mail_address">
                             <h6>Email address</h6>
                         </label>
-                        <input type="email" id="email_address" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
-                            class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                        <input type="email" id="email_address" required pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+                            title="The email must be a valid stud.noroff.no email address" class="form-control"
+                            id="exampleInputEmail1" aria-describedby="emailHelp" required>
                     </div>
                     <div class="mb-3 form-outline w-75 mx-auto">
                         <label for="exampleInputPassword1" class="form-label">
                             <h6>Password</h6>
                         </label>
-                        <input type="password" id="password" class="form-control" pattern=".{8,}"
+                        <input type="password" id="password" class="form-control" required minlength="8"
                             title="Password must be more than 8 characters" required>
                     </div>
                     <div class="mb-3 form-outline w-75 mx-auto">
@@ -59,7 +62,7 @@
             </div>
 
             <div class="col bg-secondary vh-100 border border-left-0 border-primary p-3 d-none d-lg-block">
-                <img src="./images/logo.JPG" alt="" width="210" class="rounded mx-auto d-block mt-4">
+                <img src="../images/logo.JPG" alt="" width="210" class="rounded mx-auto d-block mt-4">
                 <h2 class="text-primary position-relative top-50 start-50 translate-middle text-center">Curious about
                     new research in medicine?
                 </h2>

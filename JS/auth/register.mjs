@@ -1,12 +1,11 @@
-const form = document.getElementById('form');
-const user_name = document.getElementById('user_name');
-const email_address = document.getElementById('email_address');
-const password = document.getElementById('password');
-const confirm_password = document.getElementById('confirm_password');
+import { API_BASE_URL } from "./constants.mjs";
+import { form } from "./constants.mjs";
+import { user_name } from "./constants.mjs";
+import { email_address } from "./constants.mjs";
+import { password } from "./constants.mjs";
 
 
-const API_BASE_URL = 'https://api.noroff.dev/api/v1';
-
+//Function to create a user on Noroff API
 function createUser() {
 
     async function registerUser(url, data) {
@@ -30,9 +29,9 @@ function createUser() {
         }
     }
     const user = {
-        name: user_name,
-        email: email_address,
-        password: password,
+        name: user_name.value,
+        email: email_address.value,
+        password: password.value,
     };
 
     registerUser(`${API_BASE_URL}/social/auth/register`, user);
