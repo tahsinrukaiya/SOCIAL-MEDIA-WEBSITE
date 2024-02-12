@@ -9,7 +9,7 @@
     <meta name="author" content="Rukaiya Tahsin">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script defer src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="module" src="../JS/auth/login.js"></script>
+    <script type="module" src="../JS/auth/login.mjs"></script>
     <link rel="stylesheet" href="../dist/css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,13 +28,13 @@
                         </label>
                         <input type="email" required pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
                             title="The email must be a valid stud.noroff.no email address" class="form-control"
-                            id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                            id="email_address" aria-describedby="emailHelp" required>
                     </div>
                     <div class="mb-3 form-outline w-75 mx-auto">
                         <label for="exampleInputPassword1" class="form-label">
                             <h6>Password</h6>
                         </label>
-                        <input type="password" class="form-control" pattern=".{8,}"
+                        <input type="password" id="password" class="form-control" pattern=".{8,}"
                             title="Password must be more than 8 characters" required>
                         <small class="w-100 text-end">Forgot password?</small>
                     </div>
@@ -42,7 +42,7 @@
                         <button class="btn btn-success btn-md text-primary" role="button">Log
                             In</button>
                         <div class="small-text">
-                            <h6 class="text-active small">Don't have an account? <a href="../registration/register.html"
+                            <h6 class="text-active small">Don't have an account? <a href="../registration/index.html"
                                     class="link-secondary">Sign up
                                     here</a></h6>
                         </div>
