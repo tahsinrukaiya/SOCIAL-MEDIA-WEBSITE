@@ -12,6 +12,7 @@
     <script defer src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="module" src="../JS/auth/register.mjs"></script>
     <link rel="stylesheet" href="../dist/css/index.css">
+    <link rel="stylesheet" href="../css/customcss.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap" rel="stylesheet">
@@ -54,9 +55,9 @@
                         <input type="password" id="confirm_password" class="form-control" pattern=".{8,}"
                             title="Password must be more than 8 characters" required>
                     </div>
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-success btn-md text-primary submit" role="button">Register
-                        </button>
+                    <div class="d-grid gap-2 col-6 mx-auto ">
+                        <input type="submit" id="submitBtn" class="btn btn-info bg-success text-primary"
+                            value="Register">
                     </div>
                 </form>
 

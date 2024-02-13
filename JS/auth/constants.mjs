@@ -7,4 +7,5 @@ export const confirm_password = document.getElementById('confirm_password');
 
 //API base URL
 export const API_BASE_URL = 'https://api.noroff.dev/api/v1';
-export const REGISTER_URL = '/social/auth/login';
+export const REGISTER_URL = '/social/auth/register';
+export const LOGIN_URL = '/social/auth/login';

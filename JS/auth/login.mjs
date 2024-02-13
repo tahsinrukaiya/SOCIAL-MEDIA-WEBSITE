@@ -1,8 +1,9 @@
 import { API_BASE_URL } from "./constants.mjs";
+import { LOGIN_URL } from "./constants.mjs";
+
+
 const email = document.getElementById("email_address");
 const password = document.getElementById("password");
-
-
 
 const userLogin = {
     email: email.value,
@@ -30,4 +31,4 @@ async function loginUser(url, data) {
     }
 }
 
-loginUser(`${API_BASE_URL}/social/auth/login`, userLogin);
+loginUser((API_BASE_URL + LOGIN_URL), userLogin);

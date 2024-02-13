@@ -5,11 +5,11 @@ import { user_name } from "./constants.mjs";
 import { email_address } from "./constants.mjs";
 import { password } from "./constants.mjs";
 
-
 if (registerForm) {
     registerForm.addEventListener("submit", (event) => {
         event.preventDefault();
     })
+
     //Function to create a user on Noroff API
     async function registerUser(url, data) {
         try {
@@ -35,15 +35,12 @@ if (registerForm) {
         }
     }
 
-
     const createUser = {
         name: user_name.value,
         email: email_address.value,
         password: password.value,
     };
-
     registerUser((API_BASE_URL + REGISTER_URL), createUser);
-
 }
 
 
