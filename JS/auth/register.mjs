@@ -10,42 +10,41 @@ if (registerForm) {
     registerForm.addEventListener("submit", (event) => {
         event.preventDefault();
     })
+    //Function to create a user on Noroff API
+    async function registerUser(url, data) {
+        try {
+            //making an api call
+            const postData = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            };
+            const response = await fetch(url, postData);
+            console.log(response);
+            const json = await response.json();
+            console.log(json);
+            if (response.ok) {
+                alert("registration succesfull!");
+            }
+            else { console.log("something went wrong!") }
 
-}
-//Function to create a user on Noroff API
-async function registerUser(url, data) {
-    try {
-        //making an api call
-        const postData = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        };
-        const response = await fetch(url, postData);
-        console.log(response);
-        const json = await response.json();
-        console.log(json);
-        if (response.ok) {
-            alert("registration succesfull!");
+        } catch (error) {
+            console.error(error);
         }
-        else { console.log("something went wrong!") }
-
-    } catch (error) {
-        console.error(error);
     }
+
+
+    const createUser = {
+        name: user_name.value,
+        email: email_address.value,
+        password: password.value,
+    };
+
+    registerUser((API_BASE_URL + REGISTER_URL), createUser);
+
 }
-
-
-const createUser = {
-    name: user_name.value,
-    email: email_address.value,
-    password: password.value,
-};
-
-registerUser((API_BASE_URL + REGISTER_URL), createUser);
-
 
 
 
