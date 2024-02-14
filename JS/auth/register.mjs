@@ -4,9 +4,10 @@ import { registerForm } from "./constants.mjs";
 import { user_name } from "./constants.mjs";
 import { email_address } from "./constants.mjs";
 import { password } from "./constants.mjs";
+import { confirm_password } from "./constants.mjs";
 
 if (registerForm) {
-    registerForm.addEventListener("submit", (event) => {
+    registerForm.addEventListener("submitBtn", (event) => {
         event.preventDefault();
     })
 
@@ -25,10 +26,9 @@ if (registerForm) {
             console.log(response);
             const json = await response.json();
             console.log(json);
-            if (response.ok) {
-                alert("registration succesfull!");
+            if (!response.ok) {
+                throw new Error("Network Issue");
             }
-            else { console.log("something went wrong!") }
 
         } catch (error) {
             console.error(error);
@@ -39,8 +39,10 @@ if (registerForm) {
         name: user_name.value,
         email: email_address.value,
         password: password.value,
+        confirm_password: confirm_password.value,
     };
     registerUser((API_BASE_URL + REGISTER_URL), createUser);
+
 }
 
 

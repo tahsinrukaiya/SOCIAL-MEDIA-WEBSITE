@@ -8,7 +8,7 @@ const password = document.getElementById("password");
 
 
 if (logInForm) {
-    logInForm.addEventListener("submit", (event) => {
+    logInForm.addEventListener("submitBtn", (event) => {
         event.preventDefault();
     })
 
@@ -41,8 +41,5 @@ if (logInForm) {
         email: email.value,
         password: password.value,
     };
-
-
     loginUser((API_BASE_URL + LOGIN_URL), userLogin);
-
 }
