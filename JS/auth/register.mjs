@@ -64,6 +64,8 @@ if (registerForm) {
 
 
 
+
+
 /*TRIAL WITH THE API V2----------------------
 const API_BASE = "https://v2.api.noroff.dev/";
 const API_AUTH = "/auth";

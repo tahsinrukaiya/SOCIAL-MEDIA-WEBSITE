@@ -11,6 +11,7 @@
     <script defer src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="module" src="../JS/auth/login.mjs"></script>
     <link rel="stylesheet" href="../dist/css/index.css">
+    <link rel="stylesheet" href="../css/customcss.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap" rel="stylesheet">
@@ -20,7 +21,8 @@
     <div class="container-md px-4">
         <div class="row vw-80 gx-5">
             <div class="col bg-primary vh-100 p-3">
-                <form class="position-relative top-50 start-50 translate-middle" action="../profile/index.html">
+                <form class="position-relative top-50 start-50 translate-middle" id="logIn_form"
+                    action="../profile/index.html">
                     <div class="mb-3 form-outline w-75 mx-auto">
                         <h1 class="text-secondary text-center">Log In</h1>
                         <label for="exampleInputEmail1" class="form-label">
@@ -39,8 +41,7 @@
                         <small class="w-100 text-end">Forgot password?</small>
                     </div>
                     <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-success btn-md text-primary" role="button">Log
-                            In</button>
+                        <input type="submit" id="submitBtn" class="btn btn-info bg-success text-primary" value="Log In">
                         <div class="small-text">
                             <h6 class="text-active small">Don't have an account? <a href="../registration/index.html"
                                     class="link-secondary">Sign up

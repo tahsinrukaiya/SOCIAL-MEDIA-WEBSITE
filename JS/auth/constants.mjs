@@ -1,5 +1,6 @@
 //Constants those are cretaed for inputs from the registration forms
-export const registerForm = document.getElementById('form');
+export const registerForm = document.getElementById('register_form');
+export const logInForm = document.getElementById('logIn_form');
 export const user_name = document.getElementById('user_name');
 export const email_address = document.getElementById('email_address');
 export const password = document.getElementById('password');
