@@ -6,43 +6,46 @@ import { email_address } from "./constants.mjs";
 import { password } from "./constants.mjs";
 import { confirm_password } from "./constants.mjs";
 
+
+
 if (registerForm) {
-    registerForm.addEventListener("submitBtn", (event) => {
+    registerForm.addEventListener("submit", async (event) => {
         event.preventDefault();
-    })
 
-    //Function to create a user on Noroff API
-    async function registerUser(url, data) {
-        try {
-            //making an api call
-            const postData = {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            };
-            const response = await fetch(url, postData);
-            console.log(response);
-            const json = await response.json();
-            console.log(json);
-            if (!response.ok) {
-                throw new Error("Network Issue");
+        //Object creation to capture the current values when the form is submitted
+        const createUser = {
+            name: user_name.value,
+            email: email_address.value,
+            password: password.value,
+            confirm_password: confirm_password.value,
+        };
+        console.log(createUser);
+
+        //Function to create a user on Noroff API by using POST method.
+        async function registerUser(url, data) {
+            try {
+                //making an api call
+                const postData = {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                };
+                const response = await fetch(url, postData);
+                console.log(response);
+                const json = await response.json();
+                console.log(json);
+                if (!response.ok) {
+                    throw new Error("Network Issue");
+                }
+
+            } catch (error) {
+                console.error(error);
             }
-
-        } catch (error) {
-            console.error(error);
         }
-    }
-
-    const createUser = {
-        name: user_name.value,
-        email: email_address.value,
-        password: password.value,
-        confirm_password: confirm_password.value,
-    };
-    registerUser((API_BASE_URL + REGISTER_URL), createUser);
-
+        registerUser((API_BASE_URL + REGISTER_URL), createUser);
+    })
 }
 
 
