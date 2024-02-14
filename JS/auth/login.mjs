@@ -8,7 +8,7 @@ const password = document.getElementById("password");
 
 
 if (logInForm) {
-    logInForm.addEventListener("submitBtn", (event) => {
+    logInForm.addEventListener("submit", (event) => {
         event.preventDefault();
         const userLogin = {
             email: email.value,
@@ -41,7 +41,7 @@ if (logInForm) {
         }
 
         loginUser((API_BASE_URL + LOGIN_URL), userLogin);
-
+        window.location.href = "http://127.0.0.1:8080/profile/index.html";
     })
 }
 
