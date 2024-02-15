@@ -36,6 +36,8 @@ if (registerForm) {
                 console.log(response);
                 const json = await response.json();
                 console.log(json);
+                console.log("Registration Successfull!", response);
+                window.location.href = "http://127.0.0.1:8080/logIn/index.html";
                 if (!response.ok) {
                     throw new Error("Network Issue");
                 }
@@ -45,7 +47,6 @@ if (registerForm) {
             }
         }
         registerUser((API_BASE_URL + REGISTER_URL), createUser);
-        window.location.href = "http://127.0.0.1:8080/logIn/index.html";
     })
 }
 

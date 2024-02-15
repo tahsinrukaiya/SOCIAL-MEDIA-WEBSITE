@@ -26,6 +26,8 @@ if (logInForm) {
                 };
                 const response = await fetch(url, postData);
                 console.log(response);
+                console.log("Log in Successfull!", response);
+                window.location.href = "http://127.0.0.1:8080/profile/index.html";
                 if (!response.ok) {
                     throw new Error("Network Issue");
                 }
@@ -41,7 +43,7 @@ if (logInForm) {
         }
 
         loginUser((API_BASE_URL + LOGIN_URL), userLogin);
-        window.location.href = "http://127.0.0.1:8080/profile/index.html";
+
     })
 }
 
