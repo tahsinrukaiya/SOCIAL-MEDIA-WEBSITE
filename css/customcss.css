@@ -36,3 +36,12 @@
     border-top-width: 0;
     border-bottom-width: 0;
 }
+
+h4 .text-primary {
+    margin-top: 20%;
+}
+
+.post_image {
+    height: 300px;
+    width: 500px;
+}

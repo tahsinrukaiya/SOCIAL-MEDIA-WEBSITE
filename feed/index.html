@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Feed page of MedSci Insights">
     <meta name="author" content="Rukaiya Tahsin">
+    <link rel="shortcut icon" href="#" />
     <title>Feed Page || MedSci InsightsMedSci Insights:A platform for researchers to share their research invention
     </title>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -43,24 +44,27 @@
     </nav>
 
     <!----------------------------NEW POSTS--------------------->
-    <h4 class="text-primary text-center mt-5">Create a post</h4>
-    <div class="container sm mt-5 w-50 bg-light rounded">
-        <form class="mx-3">
-            <div class="form-group text-primary">
-                <label for="exampleFormControlInput1" class="mt-3">Title</label>
-                <input type="title" class="form-control" id="exampleFormControlInput1" placeholder="Title of your post">
-            </div>
-            <div class="form-group pb-3 text-primary">
-                <label for="exampleFormControlTextarea1 ">Your Post</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-success mb-3">Submit</button>
-        </form>
+    <div class="container-md bg-light pb-4 rounded border border-primary mt-5">
+        <h4 class="text-primary text-center mt-3 pt-3">Create a post</h4>
+        <div class="container sm mt-5 w-50 bg-light rounded">
+            <form class="mx-3">
+                <div class="form-group text-primary">
+                    <label for="exampleFormControlInput1" class="mt-3">Title</label>
+                    <input type="title" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Title of your post">
+                </div>
+                <div class="form-group pb-3 text-primary pt-3">
+                    <label for="exampleFormControlTextarea1 ">Your Post</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success mb-3">Submit</button>
+            </form>
+        </div>
     </div>
 
     <!-------DROPDOWN MENU------------>
     <!-- Example single danger button -->
-    <div class="text-center mt-5 mb-5">
+    <div class="text-center mt-5 mb-5 pb-5">
         <div class="btn-group">
             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
                 aria-expanded="false">
@@ -78,94 +82,19 @@
 
 
     <!----------------------------PREVIOUS POSTS--------------------->
-    <h4 class="text-primary text-center mt-5">Feed</h4>
-    <div class="container-md mt-5 w-75 d-flex justify-content-center align-items-center h-100 w-100">
+    <h4 class="text-primary text-center mt-5 pt-5">Feed</h4>
+    <div class="container-md mt-5 w-75 d-flex justify-content-center align-items-center h-100 w-100"
+        id="post_container">
         <div class="d-grid gap-3 w-75">
             <div class="p-2 bg-light border text-primary rounded">
-                <img src="../images/person (3).png"
-                    class="profile_image_feed_page rounded-circle border border-primary mx-3 mt-3"
+                <img src="" class="profile_image_feed_page rounded-circle border border-primary mx-3 mt-3"
                     alt="rounded picture">
-                <h6 class="text-black name">Justin</h6>
-                <h6 class="pt-2 ms-3">Advances in gene therapy and CRISPR technology</h6>
+                <h6 class="text-black name"></h6>
+                <h6 class="pt-2 ms-3"></h6>
                 <div class="image">
-                    <img src="../images/dna-closely.jpg" class="post_photo mx-auto d-block pt-4 pb-4 ">
+                    <img src="" class="">
                 </div>
-                <p class="mx-3">Gene therapy involves introducing, repairing, or replacing genes
-                    to treat or prevent diseases. Researchers have made significant
-                    progress in using gene therapy to address various genetic disorders,
-                    such as certain types of inherited blindness, hemophilia,
-                    and muscular dystrophy.</p>
-                <div class="container mx-2">
-                    <button type="button" class="btn btn-outline-success btn-sm">Like</button>
-                    <button type="button" class="btn btn-outline-success btn-sm">Comment</button>
-                </div>
-
-            </div>
-            <div class="p-2 bg-light border text-primary rounded">
-
-                <img src="../images/person (2).png"
-                    class="profile_image_feed_page rounded-circle border border-primary mx-3 mt-3"
-                    alt="rounded picture">
-                <h6 class="text-black name">Julie Lidæl</h6>
-                <h6 class="pt-2 ms-3">Nanotechnology is being used in cancer treatment</h6>
-
-                <div class="image">
-                    <img src="../images/nano.jpg" class="post_photo mx-auto d-block pt-4 pb-4 ">
-                </div>
-                <p class="ms-3">Nanotechnology has shown promise in revolutionizing cancer
-                    treatment by providing targeted and more effective therapeutic approaches.
-                    Targeted Therapy: Nanoparticles can be designed to carry anticancer drugs directly to cancer cells,
-                    minimizing damage to healthy tissues. This targeted drug delivery can enhance the effectiveness
-                    of treatment while reducing side effects.
-                    Enhanced Permeability and Retention (EPR) Effect: Nanoparticles can take
-                    advantage of the EPR effect, which is the tendency of abnormal blood
-                    vessels around tumors to be leaky. This allows nanoparticles to
-                    accumulate preferentially in the tumor tissue.</p>
-                <div class="container mx-2">
-                    <button type="button" class="btn btn-outline-success btn-sm">Like</button>
-                    <button type="button" class="btn btn-outline-success btn-sm">Comment</button>
-                </div>
-            </div>
-            <div class="p-2 bg-light border text-primary rounded">
-                <img src="../images/person (1).png"
-                    class="profile_image_feed_page rounded-circle border border-primary mx-3 mt-3"
-                    alt="rounded picture">
-                <h6 class="text-black name">Sarah Amin</h6>
-                <h6 class="pt-2 ms-3">Several COVID-19 vaccines had been developed and authorized for
-                    emergency use or approved for general use in various countries.</h6>
-
-                <div class="image">
-                    <img src="../images/covid.jpg" class="post_photo mx-auto d-block pt-4 pb-4 ">
-                </div>
-                <p class="ms-3">
-                    The Pfizer-BioNTech vaccine is an mRNA vaccine.
-                    It utilizes a small piece of the genetic material
-                    called messenger RNA (mRNA) to instruct cells in
-                    the body to produce a modified form of the spike
-                    protein found on the surface of the SARS-CoV-2 virus.
-                </p>
-                <div class="container mx-2">
-                    <button type="button" class="btn btn-outline-success btn-sm">Like</button>
-                    <button type="button" class="btn btn-outline-success btn-sm">Comment</button>
-                </div>
-            </div>
-            <div class="p-2 bg-light border text-primary rounded">
-                <img src="../images/person (4).png"
-                    class="profile_image_feed_page rounded-circle border border-primary mx-3 mt-3"
-                    alt="rounded picture">
-                <h6 class="text-black name">Eva Holmen</h6>
-                <h6 class="pt-2 ms-3"> Artificial Intelligence (AI) in Medicine</h6>
-                <div class="image">
-                    <img src="../images/ai.JPG" class="post_photo mx-auto d-block pt-4 pb-4">
-                </div>
-                <p class="ms-3">
-                    Artificial Intelligence (AI) is increasingly playing
-                    a transformative role in the medical sector, revolutionizing
-                    various aspects of healthcare delivery, research, and diagnostics.
-                    AI helps radiologists by automating repetitive tasks,
-                    providing quantitative measurements, and highlighting
-                    potential abnormalities in images.
-                </p>
+                <p class="mx-3"></p>
                 <div class="container mx-2">
                     <button type="button" class="btn btn-outline-success btn-sm">Like</button>
                     <button type="button" class="btn btn-outline-success btn-sm">Comment</button>
@@ -174,6 +103,5 @@
         </div>
     </div>
 </body>
-
 
 </html>
