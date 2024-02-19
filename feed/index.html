@@ -39,6 +39,10 @@
                     <a class="nav-link text-secondary" href="../profile/index.html">Profile</a>
                     <a class="nav-link text-secondary" href="../logIn/index.html">Log Out</a>
                 </div>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
             </div>
         </div>
     </nav>
@@ -81,11 +85,11 @@
     </div>
 
 
-    <!----------------------------PREVIOUS POSTS--------------------->
+    <!----------------------------PREVIOUS POSTS--------------
     <h4 class="text-primary text-center mt-5 pt-5">Feed</h4>
     <div class="container-md mt-5 w-75 d-flex justify-content-center align-items-center h-100 w-100"
         id="post_container">
-        <div class="d-grid gap-3 w-75">
+        <div class="d-grid gap-3 w-100">
             <div class="p-2 bg-light border text-primary rounded">
                 <img src="" class="profile_image_feed_page rounded-circle border border-primary mx-3 mt-3"
                     alt="rounded picture">
@@ -101,6 +105,37 @@
                 </div>
             </div>
         </div>
+    </div>
+
+-->
+
+
+    <!---ALL POSTS-------------->
+
+    <h4 class="text-primary text-center mt-5 pt-5">Feed</h4>
+    <div class="container-md mt-5 d-flex justify-content-center align-items-center h-100 w-75 bg-light"
+        id="main_container">
+        <div class="row w-75 justify-content-center align-items-center" id="post_container">
+            <div class="col pt-3 px-3 pb-3">
+                <div class="p-2 bg-light border border-primary text-black rounded mx-3">
+                    <h6 class="name">ID:</h6>
+                    <h6 class="pt-2 mx-3">Title: </h6>
+                    <div class="image_container">
+                        <img src="" class="post_image">
+                    </div>
+                    <p class="mx-3 pt-3"></p>
+                    <p class="mx-3"></p>
+                    <p class="mx-3"></p>
+                    <div class="container mx-2">
+                        <button type="button" class="btn btn-outline-success btn-sm">Like</button>
+                        <button type="button" class="btn btn-outline-success btn-sm">Comment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-center justify-content-center mt-5 mb-5">
+        <button type="button" class="btn btn-primary text-light">Load More Posts</button>
     </div>
 </body>
 

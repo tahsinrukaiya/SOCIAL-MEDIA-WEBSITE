@@ -19,29 +19,22 @@
     width: 160px;
 }
 
-
-/*---------------------profile picture on FEED PAGE--------------*/
-.profile_image_feed_page {
-    height: 60px;
-    width: 60px;
-}
-
 .name {
     display: inline-block;
 }
 
-.btn {
-    border-left-width: 0;
-    border-right-width: 0;
-    border-top-width: 0;
-    border-bottom-width: 0;
-}
 
 h4 .text-primary {
     margin-top: 20%;
 }
 
+/*ON FEED PAGE--------------*/
+.image_container {
+    height: 300px;
+    width: 600px;
+}
+
 .post_image {
     height: 300px;
-    width: 500px;
+    width: 100%;
 }
