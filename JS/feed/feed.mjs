@@ -45,4 +45,3 @@ async function fetchWithToken(url) {
 }
 
 fetchWithToken(API_BASE_URL + ALL_POSTS_URL);
-
