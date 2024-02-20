@@ -1,7 +1,9 @@
 import { API_BASE_URL } from "../auth/constants.mjs";
 import { ALL_POSTS_URL } from "../auth/constants.mjs";
 
-const post_container = document.getElementById("post_container");
+const main_container = document.getElementById('main_container');
+const post_container = document.getElementById('post_container');
+
 
 async function fetchWithToken(url) {
   try {
@@ -20,7 +22,10 @@ async function fetchWithToken(url) {
 
     //to loop over the array that is from the response
     for (let i = 0; i < 20 && i < posts.length; i++) {
-      post_container.innerHTML += `<div class="col pt-3 px-3 pb-3">
+      // Check if the post has media before displaying
+      if (posts[i].media && posts[i].title && posts[i].id) {
+        post_container.innerHTML += `
+       <div class="col-8 pt-3 px-3 pb-3 ">
               <div class="p-2 bg-light border border-primary rounded  text-black mx-3">
                   <h6 class="name">ID: ${posts[i].id}</h6>
                   <h6 class="pt-2 mx-3">Title: ${posts[i].title}</h6>
@@ -31,16 +36,17 @@ async function fetchWithToken(url) {
                   <p class="mx-3 pt-3">Tags: ${posts[i].tags}</p>
                   <p class="mx-3">${posts[i].created}</p>
                   <p class="mx-3">${posts[i].updated}</p>
-
                   <div class="container mx-2">
                       <button type="button" class="btn btn-outline-success btn-sm">Like</button>
                       <button type="button" class="btn btn-outline-success btn-sm">Comment</button>
                   </div>
-              </div>
+                  </div> 
   </div>`;
-
+      }
     }
   }
+
+
   catch (error) {
     console.log(error);
   }
