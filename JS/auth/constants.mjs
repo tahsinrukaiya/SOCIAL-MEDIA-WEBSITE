@@ -12,3 +12,7 @@ export const API_BASE_URL = 'https://api.noroff.dev/api/v1';
 export const REGISTER_URL = '/social/auth/register';
 export const LOGIN_URL = '/social/auth/login';
 export const ALL_POSTS_URL = '/social/posts';
+export const SINGLE_POST_URL = '/social/posts/';
+export const CREATE_POST_URL = '/social/posts';
+export const UPDATE_POST_URL = '/social/posts/<id>';
+export const DELETE_POST_URL = '/social/posts/<id>';

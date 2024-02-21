@@ -25,17 +25,18 @@ async function fetchWithToken(url) {
       // Check if the post has media before displaying
       if (posts[i].media && posts[i].title && posts[i].id) {
         post_container.innerHTML += `
-       <div class="col-8 pt-3 px-3 pb-3 ">
-              <div class="p-2 bg-light border border-primary rounded  text-black mx-3">
+        <a class="main" href="single_post.html?id=${posts[i].id}&title=${posts[i].title}">
+       <div class="col-8 pt-3 px-3 pb-3 shadow">
+              <div class="p-2 mt-3 pt-3 px-3 bg-secondary border border-primary rounded  text-black mx-3">
                   <h6 class="name">ID: ${posts[i].id}</h6>
                   <h6 class="pt-2 mx-3">Title: ${posts[i].title}</h6>
                   <div class="image_container">
                       <img src=${posts[i].media} class="post_image">
                   </div>
-                  <p class="mx-3 pt-3">${posts[i].body}</p>
+                  <p class="mx-3 pt-3">Description: ${posts[i].body}</p></a>
                   <p class="mx-3 pt-3">Tags: ${posts[i].tags}</p>
-                  <p class="mx-3">${posts[i].created}</p>
-                  <p class="mx-3">${posts[i].updated}</p>
+                  <p class="mx-3">Created on: ${posts[i].created}</p>
+                  <p class="mx-3">Updated on: ${posts[i].updated}</p>
                   <div class="container mx-2">
                       <button type="button" class="btn btn-outline-success btn-sm">Like</button>
                       <button type="button" class="btn btn-outline-success btn-sm">Comment</button>
@@ -46,10 +47,16 @@ async function fetchWithToken(url) {
     }
   }
 
-
   catch (error) {
     console.log(error);
   }
 }
 
 fetchWithToken(API_BASE_URL + ALL_POSTS_URL);
+
+//FUNCTION FOR LOAD MORE BUTTON----------------------//
+const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+
+
+

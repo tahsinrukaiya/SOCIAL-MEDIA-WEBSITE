@@ -1,0 +1,62 @@
+import { API_BASE_URL } from "../auth/constants.mjs";
+import { SINGLE_POST_URL } from "../auth/constants.mjs";
+
+function getPostIdFromQuery() {
+    const urlParams = new URLSearchParams(window.location.search);
+    console.log(urlParams.get("id"));
+    return urlParams.get("id");
+}
+
+function getPostTitleFromQuery() {
+    const urlParams = new URLSearchParams(window.location.search);
+    console.log(urlParams.get("title"));
+    return urlParams.get("title");
+}
+
+//FUNCTION TO FETCH POST DETAIL USING ID AND TITLE-------------------------
+async function fetchPostDetail() {
+
+    const postId = getPostIdFromQuery();
+    const postTitle = getPostTitleFromQuery();
+
+    if (!postId) {
+        console.error('Post ID not provided in the URL');
+        return;
+    }
+    if (!postTitle) {
+        console.error('Post Title not provided in the URL');
+        return;
+    }
+
+    const response = await fetch(API_BASE_URL + SINGLE_POST_URL + `${postId}`);
+    console.log(response);
+
+    //see if the response is correct
+    if (!response.ok) {
+        console.error('Error:', response.status, response.statusText);
+        return;
+    }
+
+    const postDetail = await response.json();
+    const post_detail_container = document.getElementById('post_detail_container');
+
+    post_detail_container.innerHTML = `<div class="col-8 pt-3 px-3 pb-3 shadow">
+          <div class="p-2 mt-3 pt-3 px-3 bg-secondary border border-primary rounded  text-black mx-3">
+              <h6 class="name">ID: ${postDetail.id}</h6>
+              <h6 class="pt-2 mx-3">Title: ${postDetail.title}</h6>
+              <div class="image_container">
+                  <img src=${postDetail.media} class="post_image">
+              </div>
+              <p class="mx-3 pt-3">Description: ${postDetail.body}</p>
+              <p class="mx-3 pt-3">Tags: ${postDetail.tags}</p>
+              <p class="mx-3">Created on: ${postDetail.created}</p>
+              <p class="mx-3">Updated on: ${postDetail.updated}</p>
+              <div class="container mx-2">
+                  <button type="button" class="btn btn-outline-success btn-sm">Like</button>
+                  <button type="button" class="btn btn-outline-success btn-sm">Comment</button>
+              </div>
+              </div> 
+</div>`;
+}
+
+fetchPostDetail();
