@@ -21,7 +21,7 @@ async function fetchWithToken(url) {
     console.log(posts);
 
     //to loop over the array that is from the response
-    for (let i = 0; i < 20 && i < posts.length; i++) {
+    for (let i = 0; i < posts.length; i++) {
       // Check if the post has media before displaying
       if (posts[i].media && posts[i].title && posts[i].id) {
         post_container.innerHTML += `
@@ -53,9 +53,6 @@ async function fetchWithToken(url) {
 }
 
 fetchWithToken(API_BASE_URL + ALL_POSTS_URL);
-
-//FUNCTION FOR LOAD MORE BUTTON----------------------//
-const loadMoreBtn = document.getElementById('loadMoreBtn');
 
 
 

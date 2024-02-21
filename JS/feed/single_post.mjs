@@ -1,6 +1,7 @@
 import { API_BASE_URL } from "../auth/constants.mjs";
 import { SINGLE_POST_URL } from "../auth/constants.mjs";
 
+
 function getPostIdFromQuery() {
     const urlParams = new URLSearchParams(window.location.search);
     console.log(urlParams.get("id"));
@@ -28,7 +29,32 @@ async function fetchPostDetail() {
         return;
     }
 
-    const response = await fetch(API_BASE_URL + SINGLE_POST_URL + `${postId}`);
+    const token = localStorage.getItem('accessToken');
+
+    // Defining optional query parameters
+    const queryParams = {
+        _author: true,
+        _comments: true,
+        _reactions: true,
+    };
+
+    // Converting query parameters to a string
+    const queryString = Object.keys(queryParams)
+        .map(key => `${key}=${queryParams[key]}`)
+        .join('&');
+
+    // Include the token and query parameters in the URL
+    const url = `${API_BASE_URL}${SINGLE_POST_URL}${postId}?${queryString}`;
+
+    // Include the token in the headers of the fetch request
+    const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+        },
+    });
+
     console.log(response);
 
     //see if the response is correct
@@ -58,5 +84,4 @@ async function fetchPostDetail() {
               </div> 
 </div>`;
 }
-
 fetchPostDetail();
