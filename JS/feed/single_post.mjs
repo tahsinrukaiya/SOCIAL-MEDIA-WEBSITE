@@ -4,13 +4,11 @@ import { SINGLE_POST_URL } from "../auth/constants.mjs";
 
 function getPostIdFromQuery() {
     const urlParams = new URLSearchParams(window.location.search);
-    console.log(urlParams.get("id"));
     return urlParams.get("id");
 }
 
 function getPostTitleFromQuery() {
     const urlParams = new URLSearchParams(window.location.search);
-    console.log(urlParams.get("title"));
     return urlParams.get("title");
 }
 
@@ -54,8 +52,6 @@ async function fetchPostDetail() {
             'Authorization': `Bearer ${token}`,
         },
     });
-
-    console.log(response);
 
     //see if the response is correct
     if (!response.ok) {

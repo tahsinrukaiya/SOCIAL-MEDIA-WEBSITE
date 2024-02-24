@@ -16,9 +16,9 @@ async function fetchWithToken(url) {
       },
     };
     const response = await fetch(url, getData);
-    console.log(response);
+    //console.log(response);
     const posts = await response.json();
-    console.log(posts);
+    //console.log(posts);
 
     //to loop over the array that is from the response
     for (let i = 0; i < posts.length; i++) {
