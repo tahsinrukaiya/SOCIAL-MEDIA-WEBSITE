@@ -32,9 +32,19 @@ post_form.addEventListener("submit", async (event) => {
 
         if (!response.ok) {
             throw new Error("Network Issue");
-        } else {
-            console.log("post creation successfull!");
-            location.reload();
+        }
+        else {
+            console.log("Post creation successful!");
+
+            // Triggering the Bootstrap modal
+            //creating a new instance of the Bootstrap Modal class
+            var post_modal = new bootstrap.Modal(document.getElementById('post_modal'));
+            post_modal.show();
+
+            //To reload the page after the modal is closed
+            post_modal.on('hidden.bs.modal', function () {
+                location.reload();
+            });
         }
 
         const json = await response.json();
