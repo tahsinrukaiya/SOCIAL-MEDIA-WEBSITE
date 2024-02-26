@@ -27,6 +27,10 @@ if (logInForm) {
                 const response = await fetch(url, postData);
                 console.log(response);
                 console.log("Log in Successfull!", response);
+
+                // After successful login
+                localStorage.setItem('userEmail', 'email');
+
                 window.location.href = "http://127.0.0.1:8080/profile/index.html";
                 if (!response.ok) {
                     throw new Error("Network Issue");

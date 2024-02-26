@@ -53,19 +53,19 @@
             <form class="mx-3" id="post_form" action="../feed/index.html" method="post">
                 <div class="form-group text-primary">
                     <label for="exampleFormControlInput1" class="mt-3">Title</label>
-                    <input type="title" class="form-control" id="post_title" placeholder="Title of your post">
+                    <input type="title" class="form-control" id="title" placeholder="Title of your post" required>
                 </div>
                 <div class="form-group pb-3 text-primary pt-3">
                     <label for="exampleFormControlTextarea1 ">Body</label>
-                    <textarea class="form-control" id="post_body" rows="3"></textarea>
+                    <textarea class="form-control" id="body" rows="3" required></textarea>
                 </div>
                 <div class="form-group text-primary">
                     <label for="exampleFormControlInput1" class="mt-3">Tags</label>
-                    <input type="title" class="form-control" id="post_tag" placeholder="Tags of your post">
+                    <input type="tags" class="form-control" id="tags" placeholder="Tags of your post">
                 </div>
                 <div class="form-group text-primary">
                     <label for="exampleFormControlInput1" class="mt-3">Media URL</label>
-                    <input type="title" class="form-control" id="post_media_url" placeholder="Media your post">
+                    <input type="media" class="form-control" id="media" placeholder="Media your post">
                 </div>
                 <!--Button trigger modal -->
                 <button type="submit" class="btn btn-success mt-3" id="create_post_btn" data-bs-toggle="modal"

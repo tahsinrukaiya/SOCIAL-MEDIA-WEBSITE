@@ -18,12 +18,20 @@ async function fetchWithToken(url) {
     const response = await fetch(url, getData);
     //console.log(response);
     const posts = await response.json();
-    //console.log(posts);
+
+    /*Get the logged-in user's ID from localStorage
+    const loggedInUserEmail = localStorage.getItem('userEmail');
+    console.log(loggedInUserEmail);*/
 
     //to loop over the array that is from the response
     for (let i = 0; i < posts.length; i++) {
+
       // Check if the post has media before displaying
       if (posts[i].media && posts[i].title && posts[i].id) {
+
+        /*Check if the logged-in user created the post
+        const userCreatedPost = posts.userId === loggedInUserId;*/
+
         post_container.innerHTML += `
         <a class="main" href="single_post.html?id=${posts[i].id}&title=${posts[i].title}">
        <div class="col-8 pt-3 px-3 pb-3 shadow">
@@ -42,7 +50,7 @@ async function fetchWithToken(url) {
                       <button type="button" class="btn btn-outline-success btn-sm">Comment</button>
                   </div>
                   </div> 
-  </div>`;
+  </div> `;
       }
     }
   }
@@ -56,4 +64,13 @@ fetchWithToken(API_BASE_URL + ALL_POSTS_URL);
 
 
 
+/*
+  
+  ${userCreatedPost ? `
+  <!-- Adding update/delete buttons if the logged-in user created the post -->
+  <div class="container mx-2">
+              <a href="update.html?id=${posts.id}&title=${posts.title}">Update</a>
+              <a href="delete.html?id=${posts.id}&title=${posts.title}">Delete</a>
+            </div>
+` : ''}*/
 
