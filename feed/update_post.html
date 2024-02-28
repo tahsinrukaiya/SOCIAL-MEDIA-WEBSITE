@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Feed page of MedSci Insights">
+    <meta name="author" content="Rukaiya Tahsin">
+    <link rel="shortcut icon" href="#" />
+    <title>Feed Page || MedSci InsightsMedSci Insights:A platform for researchers to share their research invention
+    </title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../JS/feed/update_post.mjs"></script>
+    <link rel="stylesheet" href="../dist/css/index.css">
+    <link rel="stylesheet" href="../css/customcss.css">
+    <!---Fonts links-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-secondary">
+    <!------NAVIGATION BAR------------------------------------------->
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+            <a class="logo" href="#"><img src="../images/logo.JPG" class="img-fluid img-thumbnail"
+                    alt="logo of medsci Insights" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-center" id="navbarNavAltMarkup">
+                <div class="navbar-nav px-4">
+                    <a class="nav-link text-secondary" href="../feed/index.html">Feed</a>
+                    <a class="nav-link text-secondary" href="../profile/index.html">Profile</a>
+                    <a class="nav-link text-secondary" href="../logIn/index.html">Log Out</a>
+                </div>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!--------------------FORM TO UPDATE A POST--------------------->
+    <div class="container-md bg-light pb-4 rounded border border-primary mt-5 mb-5">
+        <h4 class="text-primary text-center mt-3 pt-3">Update post</h4>
+        <div class="container sm mt-5 w-50 bg-light rounded">
+            <form class="mx-3" id="update_post_form" action="../feed/index.html" method="post">
+                <div class="form-group text-primary">
+                    <label for="exampleFormControlInput1" class="mt-3">Title</label>
+                    <input type="title" class="form-control" id="title" placeholder="Title of your post" required>
+                </div>
+                <div class="form-group pb-3 text-primary pt-3">
+                    <label for="exampleFormControlTextarea1 ">Body</label>
+                    <textarea class="form-control" id="body" rows="3" required></textarea>
+                </div>
+                <div class="form-group text-primary">
+                    <label for="exampleFormControlInput1" class="mt-3">Tags</label>
+                    <input type="tags" class="form-control" id="tags" placeholder="Tags of your post">
+                </div>
+                <div class="form-group text-primary">
+                    <label for="exampleFormControlInput1" class="mt-3">Media URL</label>
+                    <input type="media" class="form-control" id="media" placeholder="Media your post">
+                </div>
+                <!--Button trigger modal -->
+                <button type="submit" class="btn btn-success mt-3" id="create_post_btn" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Update post
+                </button>
+
+                <div class="modal fade" id="post_modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Post is updated!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Your post is ready to view
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -24,6 +24,8 @@ async function fetchWithToken(url) {
     //Get the logged-in user's info from localStorage
     const loggedInUserInfo = localStorage.getItem('user_profile');
 
+    // Declaring loggedInUserName outside the if-block
+    let loggedInUserName;
 
     // Check if the string is not null or undefined
     if (loggedInUserInfo) {
@@ -36,7 +38,7 @@ async function fetchWithToken(url) {
       console.log("user_avatar:", loggedInUserProfile.userAvatar);
 
       // Assign the loggedInUserName variable from loggedInUserProfile
-      const loggedInUserName = loggedInUserProfile.userName;
+      loggedInUserName = loggedInUserProfile.userName;
       console.log(loggedInUserName);
     }
     else {
@@ -51,11 +53,10 @@ async function fetchWithToken(url) {
 
         // Get the author information from the post
         const postAuthor = posts[i].author;
-        console.log(postAuthor);
-
 
         // Check if the logged-in user is the author of the post
-        //const isAuthor = loggedInUserAuthor && loggedInUserAuthor === postAuthor.name;
+        const isAuthor = loggedInUserName === postAuthor.name;
+        console.log(isAuthor);
 
         post_container.innerHTML += `
         <a class="main" href="single_post.html?id=${posts[i].id}&title=${posts[i].title}">
@@ -66,7 +67,8 @@ async function fetchWithToken(url) {
                   <div class="image_container">
                       <img src=${posts[i].media} class="post_image">
                   </div>
-                  <p class="mx-3 pt-3">Author:</p></a>
+                  <p class="mx-3 pt-3">By:${posts[i].author.name}</p></a>
+                  
                   <p class="mx-3 pt-3">Description: ${posts[i].body}</p></a>
                   <p class="mx-3 pt-3">Tags: ${posts[i].tags}</p>
                   <p class="mx-3">Created on: ${posts[i].created}</p>
@@ -75,7 +77,13 @@ async function fetchWithToken(url) {
                       <button type="button" class="btn btn-outline-success btn-sm">Like</button>
                       <button type="button" class="btn btn-outline-success btn-sm">Comment</button>
                   </div>
+                  <div class="container mx-2 d-flex flex-row-reverse bg-secondary">
+                  ${isAuthor ? `
+                 <a class="delete px-3" href = "delete_post.html">Delete</button></a>
+                 <a class="update" href = "update_post.html">Update</button></a>
+                ` : ''}
                   </div> 
+                  </div>        
   </div> `;
       }
     }
@@ -86,14 +94,7 @@ async function fetchWithToken(url) {
   }
 }
 
-fetchWithToken(API_BASE_URL + ALL_POSTS_URL);
-
-
-/*${isAuthor ? `
-              <button type="button" class="btn btn-outline-success btn-sm">Update</button>
-              <button type="button" class="btn btn-outline-success btn-sm">Delete</button>
-            ` : ''}
-          }*/
+fetchWithToken(API_BASE_URL + ALL_POSTS_URL + `?_author=true`);
 
 
 
