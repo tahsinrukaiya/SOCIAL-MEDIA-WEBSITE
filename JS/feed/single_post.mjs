@@ -69,6 +69,7 @@ async function fetchPostDetail() {
               <div class="image_container">
                   <img src=${postDetail.media} class="post_image">
               </div>
+              <p class="mx-3 pt-3">By: ${postDetail.author.name}</p>
               <p class="mx-3 pt-3">Description: ${postDetail.body}</p>
               <p class="mx-3 pt-3">Tags: ${postDetail.tags}</p>
               <p class="mx-3">Created on: ${postDetail.created}</p>

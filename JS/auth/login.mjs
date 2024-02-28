@@ -1,7 +1,7 @@
 import { API_BASE_URL } from "./constants.mjs";
 import { LOGIN_URL } from "./constants.mjs";
 import { logInForm } from "./constants.mjs";
-
+import { saveStorage } from "../storage/local_storage.mjs";
 
 const email = document.getElementById("email_address");
 const password = document.getElementById("password");
@@ -28,23 +28,24 @@ if (logInForm) {
                 console.log(response);
                 console.log("Log in Successfull!", response);
 
-                // After successful login
-                localStorage.setItem('userEmail', 'email');
+                window.location.href = "http://127.0.0.1:8080/feed/index.html";
 
-                window.location.href = "http://127.0.0.1:8080/profile/index.html";
                 if (!response.ok) {
                     throw new Error("Network Issue");
                 }
+                else {
+                    const json = await response.json();
+                    // After successful login
+                    saveStorage("token", json.accessToken);
+                    saveStorage("user_profile", {
+                        userName: json.name,
+                        userEmail: json.email,
+                        userAvatar: json.avatar,
+                    });
+                }
 
-                const json = await response.json();
-                const accessToken = json.accessToken;
-
-                //The setItem method is used, which takes two arguments:
-                // a key ('accessToken' in this case) and a value (accessToken). 
-                localStorage.setItem('accessToken', accessToken);
-                console.log(json);
-                return json;
-            } catch (error) {
+            }
+            catch (error) {
                 console.log(error);
             }
         }

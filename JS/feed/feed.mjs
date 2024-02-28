@@ -1,4 +1,4 @@
-import { API_BASE_URL } from "../auth/constants.mjs";
+import { API_BASE_URL, user_name } from "../auth/constants.mjs";
 import { ALL_POSTS_URL } from "../auth/constants.mjs";
 
 const main_container = document.getElementById('main_container');
@@ -8,6 +8,7 @@ const post_container = document.getElementById('post_container');
 async function fetchWithToken(url) {
   try {
     const token = localStorage.getItem('accessToken');
+
     const getData = {
       method: 'GET',
       headers: {
@@ -15,13 +16,32 @@ async function fetchWithToken(url) {
         Authorization: `Bearer ${token}`,
       },
     };
-    const response = await fetch(url, getData);
-    //console.log(response);
-    const posts = await response.json();
 
-    /*Get the logged-in user's ID from localStorage
-    const loggedInUserEmail = localStorage.getItem('userEmail');
-    console.log(loggedInUserEmail);*/
+    const response = await fetch(url, getData);
+    const posts = await response.json();
+    console.log(posts);
+
+    //Get the logged-in user's info from localStorage
+    const loggedInUserInfo = localStorage.getItem('user_profile');
+
+
+    // Check if the string is not null or undefined
+    if (loggedInUserInfo) {
+      // Parse the JSON string into an object
+      const loggedInUserProfile = JSON.parse(loggedInUserInfo);
+
+      //accessing the profile information
+      console.log("user_name:", loggedInUserProfile.userName);
+      console.log("user_email:", loggedInUserProfile.userEmail);
+      console.log("user_avatar:", loggedInUserProfile.userAvatar);
+
+      // Assign the loggedInUserName variable from loggedInUserProfile
+      const loggedInUserName = loggedInUserProfile.userName;
+      console.log(loggedInUserName);
+    }
+    else {
+      console.log("No user profile found in localStorage.");
+    }
 
     //to loop over the array that is from the response
     for (let i = 0; i < posts.length; i++) {
@@ -29,8 +49,13 @@ async function fetchWithToken(url) {
       // Check if the post has media before displaying
       if (posts[i].media && posts[i].title && posts[i].id) {
 
-        /*Check if the logged-in user created the post
-        const userCreatedPost = posts.userId === loggedInUserId;*/
+        // Get the author information from the post
+        const postAuthor = posts[i].author;
+        console.log(postAuthor);
+
+
+        // Check if the logged-in user is the author of the post
+        //const isAuthor = loggedInUserAuthor && loggedInUserAuthor === postAuthor.name;
 
         post_container.innerHTML += `
         <a class="main" href="single_post.html?id=${posts[i].id}&title=${posts[i].title}">
@@ -41,6 +66,7 @@ async function fetchWithToken(url) {
                   <div class="image_container">
                       <img src=${posts[i].media} class="post_image">
                   </div>
+                  <p class="mx-3 pt-3">Author:</p></a>
                   <p class="mx-3 pt-3">Description: ${posts[i].body}</p></a>
                   <p class="mx-3 pt-3">Tags: ${posts[i].tags}</p>
                   <p class="mx-3">Created on: ${posts[i].created}</p>
@@ -63,14 +89,12 @@ async function fetchWithToken(url) {
 fetchWithToken(API_BASE_URL + ALL_POSTS_URL);
 
 
+/*${isAuthor ? `
+              <button type="button" class="btn btn-outline-success btn-sm">Update</button>
+              <button type="button" class="btn btn-outline-success btn-sm">Delete</button>
+            ` : ''}
+          }*/
 
-/*
-  
-  ${userCreatedPost ? `
-  <!-- Adding update/delete buttons if the logged-in user created the post -->
-  <div class="container mx-2">
-              <a href="update.html?id=${posts.id}&title=${posts.title}">Update</a>
-              <a href="delete.html?id=${posts.id}&title=${posts.title}">Delete</a>
-            </div>
-` : ''}*/
+
+
 
