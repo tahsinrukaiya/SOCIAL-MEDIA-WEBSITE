@@ -41,10 +41,10 @@ async function fetchPostDetail() {
         .map(key => `${key}=${queryParams[key]}`)
         .join('&');
 
-    // Include the token and query parameters in the URL
+    // Including the token and query parameters in the URL
     const url = `${API_BASE_URL}${SINGLE_POST_URL}${postId}?${queryString}`;
 
-    // Include the token in the headers of the fetch request
+    // Including the token in the headers of the fetch request
     const response = await fetch(url, {
         method: 'GET',
         headers: {

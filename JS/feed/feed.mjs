@@ -79,8 +79,8 @@ async function fetchWithToken(url) {
                   </div>
                   <div class="container mx-2 d-flex flex-row-reverse bg-secondary">
                   ${isAuthor ? `
-                 <a class="delete px-3" href = "delete_post.html">Delete</button></a>
-                 <a class="update" href = "update_post.html">Update</button></a>
+                 <a class="delete_post px-3" href ="delete_post.html?id=${posts[i].id}&title=${posts[i].title}">Delete</a>
+                 <a class="update_post" href ="update_post.html?id=${posts[i].id}&title=${posts[i].title}">Update</a>
                 ` : ''}
                   </div> 
                   </div>        
