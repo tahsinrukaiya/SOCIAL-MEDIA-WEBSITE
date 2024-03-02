@@ -44,3 +44,13 @@ h4 .text-primary {
 .main {
     text-decoration: none;
 }
+
+/* for delete page*/
+.small_container {
+    margin: 10%;
+    border: 1px;
+    box-sizing: border-box;
+    border-style: solid;
+    padding: 50px;
+    color: black;
+}

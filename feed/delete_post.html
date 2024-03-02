@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Feed page of MedSci Insights">
+    <meta name="author" content="Rukaiya Tahsin">
+    <link rel="shortcut icon" href="#" />
+    <title>Feed Page || MedSci InsightsMedSci Insights:A platform for researchers to share their research invention
+    </title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../JS/feed/delete_post.mjs"></script>
+    <link rel="stylesheet" href="../dist/css/index.css">
+    <link rel="stylesheet" href="../css/customcss.css">
+    <!---Fonts links-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-secondary">
+    <!------NAVIGATION BAR------------------------------------------->
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+            <a class="logo" href="#"><img src="../images/logo.JPG" class="img-fluid img-thumbnail"
+                    alt="logo of medsci Insights" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-center" id="navbarNavAltMarkup">
+                <div class="navbar-nav px-4">
+                    <a class="nav-link text-secondary" href="../feed/index.html">Feed</a>
+                    <a class="nav-link text-secondary" href="../profile/index.html">Profile</a>
+                    <a class="nav-link text-secondary" href="../logIn/index.html">Log Out</a>
+                </div>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!--------------------DELETE  A POST--------------------->
+    <div class="small_container">
+        <p>
+        <h6>You are about to delete a post.
+            Are you sure you want to delete?</h6>
+        </p>
+        <!-- Button trigger modal -->
+        <button type="submit" class="btn btn-primary" id="delete_btn" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">
+            Yes, Delete
+        </button>
+        <a href="index.html"> <button type="submit" class="btn btn-dark" id="cancel_btn">
+                Cancel
+            </button></a>
+        <!-- Modal -->
+        <div class="modal fade" id="delete_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Delete Successfull</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Your post is permanently deleted!
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

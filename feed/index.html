@@ -14,7 +14,7 @@
     <script defer src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="../JS/feed/feed.mjs"></script>
     <script type="module" src="../JS/feed/create_post.mjs"></script>
-    <script type="module" src="../JS/feed/update_post.mjs"></script>
+
     <script type="module" src="../JS/feed/delete_post.mjs"></script>
     <link rel="stylesheet" href="../dist/css/index.css">
     <link rel="stylesheet" href="../css/customcss.css">
@@ -51,7 +51,7 @@
     <!--------------------FORM TO CREATE A POST--------------------->
     <div class="container-md bg-light pb-4 rounded border border-primary mt-5">
         <h4 class="text-primary text-center mt-3 pt-3">Create a post</h4>
-        <div class="container sm mt-5 w-50 bg-light rounded">
+        <div class="container sm mt-3 w-50 bg-light rounded">
             <form class="mx-3" id="post_form" action="../feed/index.html" method="post">
                 <div class="form-group text-primary">
                     <label for="exampleFormControlInput1" class="mt-3">Title</label>
@@ -75,7 +75,7 @@
                     Upload Post
                 </button>
 
-                <div class="modal fade" id="post_modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                <div class="modal fade text-primary" id="post_modal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -115,7 +115,7 @@
     </div>
 
 
-    <!---------------DISPLAYING 20 POSTS WITH LOAD MORE BUTTON ------------->
+    <!---------------DISPLAYING ALL THE POST WHICH HAS MEDIA ------------->
     <h4 class="text-primary text-center mt-5 pt-5">Feed</h4>
     <div class="container-fluid mt-5 d-flex justify-content-center align-items-center h-100 bg-light"
         id="main_container">

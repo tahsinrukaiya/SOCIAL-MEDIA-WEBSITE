@@ -13,7 +13,7 @@ function getPostTitleFromQuery() {
 }
 
 //FUNCTION TO FETCH POST DETAIL USING ID AND TITLE-------------------------
-async function fetchPostDetail() {
+export async function fetchPostDetail() {
 
     const postId = getPostIdFromQuery();
     const postTitle = getPostTitleFromQuery();
