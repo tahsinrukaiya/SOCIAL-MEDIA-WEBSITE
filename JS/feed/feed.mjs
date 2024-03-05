@@ -61,16 +61,15 @@ async function fetchWithToken(url) {
         post_container.innerHTML += `
         <a class="main" href="single_post.html?id=${posts[i].id}&title=${posts[i].title}">
        <div class="col-8 pt-3 px-3 pb-3 shadow">
-              <div class="p-2 mt-3 pt-3 px-3 bg-secondary border border-primary rounded  text-black mx-3">
+              <div class="p-2 mt-3 pt-2 px-3 bg-secondary border border-primary rounded  text-black mx-3">
                   <h6 class="name">ID: ${posts[i].id}</h6>
                   <h6 class="pt-2 mx-3">Title: ${posts[i].title}</h6>
                   <div class="image_container">
                       <img src=${posts[i].media} class="post_image">
                   </div>
                   <p class="mx-3 pt-3">By:${posts[i].author.name}</p></a>
-                  
-                  <p class="mx-3 pt-3">Description: ${posts[i].body}</p></a>
-                  <p class="mx-3 pt-3">Tags: ${posts[i].tags}</p>
+                  <p class="mx-3">Description: ${posts[i].body}</p></a>
+                  <p class="mx-3">Tags: ${posts[i].tags}</p>
                   <p class="mx-3">Created on: ${posts[i].created}</p>
                   <p class="mx-3">Updated on: ${posts[i].updated}</p>
                   <div class="container mx-2">
@@ -79,7 +78,7 @@ async function fetchWithToken(url) {
                   </div>
                   <div class="container mx-2 d-flex flex-row-reverse bg-secondary">
                   ${isAuthor ? `
-                 <a class="delete_post px-3" href ="delete_post.html?id=${posts[i].id}&title=${posts[i].title}">Delete</a>
+                  <a class="delete_post px-3" href ="delete_post.html?id=${posts[i].id}&title=${posts[i].title}">Delete</a>
                  <a class="update_post" href ="update_post.html?id=${posts[i].id}&title=${posts[i].title}">Update</a>
                 ` : ''}
                   </div> 
