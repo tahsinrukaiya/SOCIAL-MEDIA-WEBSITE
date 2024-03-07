@@ -57,6 +57,10 @@ posts_with_tag.addEventListener('click', function () {
             );
             console.log(filteredPosts);
 
+
+            // Initializing an empty string to accumulate HTML content
+            let postsHTML = '';
+
             //to loop over the filtered array 
             for (let i = 0; i < filteredPosts.length; i++) {
 
@@ -67,15 +71,16 @@ posts_with_tag.addEventListener('click', function () {
                 const isAuthor = loggedInUserName === postAuthor.name;
                 console.log(isAuthor);
 
-                post_container.innerHTML += `
-                <div class="main">
-                <a href="single_post.html?id=${filteredPosts[i].id}&title=${filteredPosts[i].title}">
+
+                // Append the HTML content for the current post to the accumulator
+                postsHTML += `
+                <a class="main" href="single_post.html?id=${filteredPosts[i].id}&title=${filteredPosts[i].title}">
                     <div class="col-8 pt-3 px-3 pb-3 shadow">
                         <div class="p-2 mt-3 pt-2 px-3 bg-secondary border border-primary rounded text-black mx-3">
                             <h6 class="name">ID: ${filteredPosts[i].id}</h6>
                             <h6 class="pt-2 mx-3">Title: ${filteredPosts[i].title}</h6>
                             <div class="image_container">
-                                <img src=${filteredPosts[i].media} class="post_image">
+                                <img src=${filteredPosts[i].media} class="img-fluid rounded mx-auto d-block">
                             </div>
                             <p class="mx-3 pt-3">By: ${filteredPosts[i].author.name}</p>
                             <p class="mx-3">Description: ${filteredPosts[i].body}</p>
@@ -95,8 +100,10 @@ posts_with_tag.addEventListener('click', function () {
                         </div>
                     </div>
                 </a>
-            </div> `;
+            `;
             }
+            // Set the accumulated HTML content to the post_container.innerHTML after the loop
+            post_container.innerHTML = postsHTML;
         }
         catch (error) {
             console.log(error);

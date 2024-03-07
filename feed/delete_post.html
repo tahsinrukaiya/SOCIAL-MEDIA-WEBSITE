@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script defer src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="../JS/feed/delete_post.mjs"></script>
+    <script type="module" defer src="../JS/feed/delete_post.mjs"></script>
     <link rel="stylesheet" href="../dist/css/index.css">
     <link rel="stylesheet" href="../css/customcss.css">
     <!---Fonts links-->
@@ -47,12 +47,11 @@
 
     <!--------------------DELETE  A POST--------------------->
     <div class="small_container">
-        <p>
         <h6>You are about to delete a post.
             Are you sure you want to delete?</h6>
-        </p>
+
         <!-- Button trigger modal -->
-        <button type="submit" class="btn btn-primary" id="delete_btn" data-bs-toggle="modal"
+        <button type="button" class="btn btn-primary" id="delete_btn" data-bs-toggle="modal"
             data-bs-target="#exampleModal">
             Yes, Delete
         </button>

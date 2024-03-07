@@ -2,8 +2,10 @@
 import { API_BASE_URL } from "../auth/constants.mjs";
 import { DELETE_POST_URL } from "../auth/constants.mjs";
 
+
+const cancel_btn = document.getElementById('cancel_btn');
 const delete_btn = document.getElementById('delete_btn');
-const cancel_btn = document.getElementById('cancel_Btn');
+console.log(delete_btn);
 
 
 function getPostIdFromQuery() {
@@ -16,7 +18,6 @@ function getPostTitleFromQuery() {
     return urlParams.get("title");
 }
 
-
 //FUNCTION TO FETCH POST DETAIL USING ID AND TITLE-------------------------
 const postId = getPostIdFromQuery();
 console.log(postId);
@@ -24,7 +25,7 @@ const postTitle = getPostTitleFromQuery();
 console.log(postTitle);
 
 //API CALL TO GET PREVIOUS DATA FIRST
-async function deletPostData() {
+async function deletePostData() {
 
     const postId = getPostIdFromQuery();
     const postTitle = getPostTitleFromQuery();
@@ -82,4 +83,4 @@ async function deletPostData() {
     })
 };
 
-deletPostData();
+deletePostData();

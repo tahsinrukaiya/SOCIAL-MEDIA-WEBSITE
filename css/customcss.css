@@ -29,17 +29,6 @@ h4 .text-primary {
 }
 
 /*ON FEED PAGE--------------*/
-.image_container {
-    height: 300px;
-    width: 450px;
-    position: relative;
-    left: 18%;
-}
-
-.post_image {
-    height: 300px;
-    width: 450px;
-}
 
 .main {
     text-decoration: none;

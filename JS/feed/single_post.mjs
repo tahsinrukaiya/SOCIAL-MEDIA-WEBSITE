@@ -67,7 +67,7 @@ export async function fetchPostDetail() {
               <h6 class="name">ID: ${postDetail.id}</h6>
               <h6 class="pt-2 mx-3">Title: ${postDetail.title}</h6>
               <div class="image_container">
-                  <img src=${postDetail.media} class="post_image">
+                  <img src=${postDetail.media} class="img-fluid rounded mx-auto d-block">
               </div>
               <p class="mx-3 pt-3">By: ${postDetail.author.name}</p>
               <p class="mx-3 pt-3">Description: ${postDetail.body}</p>

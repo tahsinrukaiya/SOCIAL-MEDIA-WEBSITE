@@ -65,8 +65,8 @@ async function fetchWithToken(url) {
                   <h6 class="name">ID: ${posts[i].id}</h6>
                   <h6 class="pt-2 mx-3">Title: ${posts[i].title}</h6>
                   <div class="image_container">
-                      <img src=${posts[i].media} class="post_image">
-                  </div>
+                  <img src=${posts[i].media} class="img-fluid rounded mx-auto d-block" alt="...">
+                     </div>
                   <p class="mx-3 pt-3">By:${posts[i].author.name}</p></a>
                   <p class="mx-3">Description: ${posts[i].body}</p></a>
                   <p class="mx-3">Tags: ${posts[i].tags}</p>
