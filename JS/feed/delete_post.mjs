@@ -5,7 +5,7 @@ import { DELETE_POST_URL } from "../auth/constants.mjs";
 
 const cancel_btn = document.getElementById('cancel_btn');
 const delete_btn = document.getElementById('delete_btn');
-console.log(delete_btn);
+
 
 
 function getPostIdFromQuery() {
@@ -20,9 +20,8 @@ function getPostTitleFromQuery() {
 
 //FUNCTION TO FETCH POST DETAIL USING ID AND TITLE-------------------------
 const postId = getPostIdFromQuery();
-console.log(postId);
 const postTitle = getPostTitleFromQuery();
-console.log(postTitle);
+
 
 //API CALL TO GET PREVIOUS DATA FIRST
 async function deletePostData() {

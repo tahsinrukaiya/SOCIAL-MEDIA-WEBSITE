@@ -1,4 +1,4 @@
-import { API_BASE_URL, user_name } from "../auth/constants.mjs";
+import { API_BASE_URL } from "../auth/constants.mjs";
 import { ALL_POSTS_URL } from "../auth/constants.mjs";
 
 const main_container = document.getElementById('main_container');
@@ -31,11 +31,6 @@ async function fetchWithToken(url) {
     if (loggedInUserInfo) {
       // Parse the JSON string into an object
       const loggedInUserProfile = JSON.parse(loggedInUserInfo);
-
-      //accessing the profile information
-      console.log("user_name:", loggedInUserProfile.userName);
-      console.log("user_email:", loggedInUserProfile.userEmail);
-      console.log("user_avatar:", loggedInUserProfile.userAvatar);
 
       // Assign the loggedInUserName variable from loggedInUserProfile
       loggedInUserName = loggedInUserProfile.userName;
