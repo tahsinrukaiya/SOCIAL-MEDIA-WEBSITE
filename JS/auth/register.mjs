@@ -37,6 +37,7 @@ if (registerForm) {
                 const json = await response.json();
                 console.log(json);
                 console.log("Registration Successfull!", response);
+                alert("Registration Successfull!");
                 window.location.href = "http://127.0.0.1:8080/logIn/index.html";
                 if (!response.ok) {
                     throw new Error("Network Issue");
