@@ -7,7 +7,6 @@ const cancel_btn = document.getElementById('cancel_btn');
 const delete_btn = document.getElementById('delete_btn');
 
 
-
 function getPostIdFromQuery() {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get("id");
@@ -42,44 +41,52 @@ async function deletePostData() {
     }
 
 
-    delete_btn.addEventListener("click", async (event) => {
-        event.preventDefault();
-        try {
-            const response = await fetch(API_BASE_URL + DELETE_POST_URL + postId, {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${storedAccessToken}`,
-                },
-            });
-
-            if (!response.ok) {
-                //more details about the error returned by the server
-                const errorText = await response.text();
-                console.error("Error from server:", errorText);
-                throw new Error("Network Issue");
-            }
-            else {
-                console.log("Post deletion successful!");
-
-                // Triggering the Bootstrap modal
-                var delete_modal = new bootstrap.Modal(document.getElementById('delete_modal'));
-                delete_modal.show();
-
-                // To reload the page after the modal is closed
-                delete_modal._element.addEventListener('hidden.bs.modal', function () {
-                    console.log('Modal closed');
-                    // Delay the page reload to ensure the modal is closed
-                    setTimeout(() => {
-                        window.location.href = "http://127.0.0.1:8080/feed/";
-                    }, 500);
+    if (delete_btn) {
+        delete_btn.addEventListener("click", async (event) => {
+            event.preventDefault();
+            try {
+                const response = await fetch(API_BASE_URL + DELETE_POST_URL + postId, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${storedAccessToken}`,
+                    },
                 });
-            }
-        }
-        catch (error) {
-            console.error(error);
-        }
-    })
-};
 
-deletePostData();
+                if (!response.ok) {
+                    //more details about the error returned by the server
+                    const errorText = await response.text();
+                    console.error("Error from server:", errorText);
+                    throw new Error("Network Issue");
+                }
+                else {
+                    console.log("Post deletion successful!");
+
+                    // Triggering the Bootstrap modal
+                    var delete_modal = new bootstrap.Modal(document.getElementById('delete_modal'));
+                    delete_modal.show();
+
+                    // To reload the page after the modal is closed
+                    delete_modal._element.addEventListener('hidden.bs.modal', function () {
+                        console.log('Modal closed');
+                        // Delay the page reload to ensure the modal is closed
+                        setTimeout(() => {
+                            window.location.href = "http://127.0.0.1:8080/feed/";
+                        }, 500);
+                    });
+                }
+            }
+            catch (error) {
+                console.error(error);
+            }
+
+        })
+    }
+    else {
+        console.log("No delete_btn found yet!");
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    deletePostData();
+});
