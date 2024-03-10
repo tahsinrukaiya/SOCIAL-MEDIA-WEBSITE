@@ -4,7 +4,7 @@ import { registerForm } from "./constants.mjs";
 import { user_name } from "./constants.mjs";
 import { email_address } from "./constants.mjs";
 import { password } from "./constants.mjs";
-import { confirm_password } from "./constants.mjs";
+
 
 
 
@@ -17,7 +17,6 @@ if (registerForm) {
             name: user_name.value,
             email: email_address.value,
             password: password.value,
-            confirm_password: confirm_password.value,
         };
         console.log(createUser);
 
