@@ -1,5 +1,8 @@
 Second year assignment on css framework and advanced JavaScript
 
+![readme image](https://github.com/tahsinrukaiya/SOCIAL-MEDIA-WEBSITE/assets/126619366/ef66d6cc-593f-4ae6-82a7-9d4da2b6539f)
+
+
 
 Description
 
@@ -13,6 +16,19 @@ HTML
 Bootstrap 
 SASS
 JS
+
+Installation Guide
+
+1. clone the repo
+2. Install the dependencies
+
+   npm install bootstrap@5.3.2
+
+   npm install live-server
+
+To run
+npm run dev 
+Then browse the site
 
 
 contact
