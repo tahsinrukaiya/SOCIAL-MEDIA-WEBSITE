@@ -28,7 +28,7 @@ if (logInForm) {
                 console.log(response);
                 console.log("Log in Successfull!", response);
 
-                window.location.href = "public/pages/feed/index.html";
+                window.location.href = "../feed/index.html";
 
                 if (!response.ok) {
                     throw new Error("Network Issue");

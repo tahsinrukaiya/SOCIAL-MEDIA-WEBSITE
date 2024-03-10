@@ -25,7 +25,7 @@ async function fetchPostData() {
     const postTitle = getPostTitleFromQuery();
 
     if (!postId) {
-        console.error('Post ID not provided in the URL');
+        console.error('Post ID is not provided in the URL');
         return;
     }
     if (!postTitle) {
@@ -155,7 +155,7 @@ async function fetchPostData() {
                         console.log('Modal closed');
                         // Delay the page reload to ensure the modal is closed
                         setTimeout(() => {
-                            window.location.href = "/public/pages/feed/index.html";
+                            window.location.href = "../feed/index.html";
                         }, 500);
                     });
                 }
