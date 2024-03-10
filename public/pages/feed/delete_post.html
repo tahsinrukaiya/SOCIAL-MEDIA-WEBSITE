@@ -9,12 +9,14 @@
     <link rel="shortcut icon" href="#" />
     <title>Feed Page || MedSci InsightsMedSci Insights:A platform for researchers to share their research invention
     </title>
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script defer src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" defer src="../JS/feed/delete_post.mjs"></script>
-    <link rel="stylesheet" href="../dist/css/index.css">
-    <link rel="stylesheet" href="../css/customcss.css">
+    <script type="module" defer src="/src/JS/feed/feed.mjs"></script>
+    <script type="module" defer src="/src/JS/feed/create_post.mjs"></script>
+    <script type="module" defer src="/src/JS/feed/update_post.mjs"></script>
+    <script type="module" defer src="/src/JS/feed/delete_post.mjs"></script>
+    <script type="module" defer src="/src/JS/feed/filter_post.mjs"></script>
+    <script type="module" defer src="/src/JS/search.mjs"></script>
+    <link rel="stylesheet" href="/dist/css/index.css">
+    <link rel="stylesheet" href="/public/style/customcss.css">
     <!---Fonts links-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +27,7 @@
     <!------NAVIGATION BAR------------------------------------------->
     <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container-fluid">
-            <a class="logo" href="#"><img src="../images/logo.JPG" class="img-fluid img-thumbnail"
+            <a class="logo" href="#"><img src="/public/assets/logo.JPG" class="img-fluid img-thumbnail"
                     alt="logo of medsci Insights" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,7 +57,7 @@
             data-bs-target="#exampleModal">
             Yes, Delete
         </button>
-        <a href="index.html"> <button type="submit" class="btn btn-dark" id="cancel_btn">
+        <a href="/public/pages/feed/index.html"> <button type="submit" class="btn btn-dark" id="cancel_btn">
                 Cancel
             </button></a>
         <!-- Modal -->

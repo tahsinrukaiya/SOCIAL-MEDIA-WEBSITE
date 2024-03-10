@@ -37,7 +37,7 @@ if (registerForm) {
                 console.log(json);
                 console.log("Registration Successfull!", response);
                 alert("Registration Successfull!");
-                window.location.href = "http://127.0.0.1:8080/logIn/index.html";
+                window.location.href = "public/pages/logIn/index.html";
                 if (!response.ok) {
                     throw new Error("Network Issue");
                 }

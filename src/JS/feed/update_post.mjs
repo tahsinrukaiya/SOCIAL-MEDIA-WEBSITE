@@ -155,7 +155,7 @@ async function fetchPostData() {
                         console.log('Modal closed');
                         // Delay the page reload to ensure the modal is closed
                         setTimeout(() => {
-                            window.location.href = "http://127.0.0.1:8080/feed/";
+                            window.location.href = "/public/pages/feed/index.html";
                         }, 500);
                     });
                 }
