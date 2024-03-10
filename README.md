@@ -21,6 +21,7 @@ Installation Guide
 
 1. clone the repo
 2. Install the dependencies
+
    npm install bootstrap@5.3.2
 
    npm install live-server
