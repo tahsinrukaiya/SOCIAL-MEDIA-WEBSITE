@@ -36,7 +36,7 @@ if (logInForm) {
                 else {
                     const json = await response.json();
                     // After successful login
-                    saveStorage("token", json.accessToken);
+                    saveStorage("token", json.token);
                     saveStorage("user_profile", {
                         userName: json.name,
                         userEmail: json.email,
