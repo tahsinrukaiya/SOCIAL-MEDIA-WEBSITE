@@ -1,5 +1,6 @@
 import { API_BASE_URL } from "../auth/constants.mjs";
 import { SINGLE_POST_URL } from "../auth/constants.mjs";
+import { formatDate } from "../date_format.mjs";
 
 
 function getPostIdFromQuery() {
@@ -61,6 +62,7 @@ export async function fetchPostDetail() {
 
     const postDetail = await response.json();
     const post_detail_container = document.getElementById('post_detail_container');
+
 
     post_detail_container.innerHTML = `<div class="col-8 pt-3 px-3 pb-3 shadow">
           <div class="p-2 mt-3 pt-3 px-3 bg-secondary border border-primary rounded  text-black mx-3">

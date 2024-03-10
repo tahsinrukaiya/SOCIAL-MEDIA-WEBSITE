@@ -1,5 +1,6 @@
 import { API_BASE_URL } from "../auth/constants.mjs";
 import { ALL_POSTS_URL } from "../auth/constants.mjs";
+import { formatDate } from "../date_format.mjs";
 
 
 const posts_with_tag = document.getElementById('posts_with_tag');
@@ -67,6 +68,10 @@ posts_with_tag.addEventListener('click', function () {
                 // Get the author information from the post
                 const postAuthor = filteredPosts[i].author;
 
+                // Format the created and updated dates using formatDate function
+                const formattedCreatedDate = formatDate(posts[i].created);
+                const formattedUpdatedDate = formatDate(posts[i].updated);
+
                 // Check if the logged-in user is the author of the post
                 const isAuthor = loggedInUserName === postAuthor.name;
                 console.log(isAuthor);
@@ -85,8 +90,8 @@ posts_with_tag.addEventListener('click', function () {
                             <p class="mx-3 pt-3">By: ${filteredPosts[i].author.name}</p>
                             <p class="mx-3">Description: ${filteredPosts[i].body}</p>
                             <p class="mx-3">Tags: ${filteredPosts[i].tags}</p>
-                            <p class="mx-3">Created on: ${filteredPosts[i].created}</p>
-                            <p class="mx-3">Updated on: ${filteredPosts[i].updated}</p>
+                            <p class="mx-3">Created on: ${formattedCreatedDate}</p>
+                            <p class="mx-3">Updated on: ${formattedUpdatedDate}</p>
                             <div class="container mx-2">
                                 <button type="button" class="btn btn-outline-success btn-sm">Like</button>
                                 <button type="button" class="btn btn-outline-success btn-sm">Comment</button>

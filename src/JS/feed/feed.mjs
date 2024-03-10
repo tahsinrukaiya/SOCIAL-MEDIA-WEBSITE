@@ -1,5 +1,6 @@
 import { API_BASE_URL } from "../auth/constants.mjs";
 import { ALL_POSTS_URL } from "../auth/constants.mjs";
+import { formatDate } from "../date_format.mjs";
 
 const main_container = document.getElementById('main_container');
 const post_container = document.getElementById('post_container');
@@ -20,6 +21,7 @@ async function fetchWithToken(url) {
     const response = await fetch(url, getData);
     const posts = await response.json();
     console.log(posts);
+
 
     //Get the logged-in user's info from localStorage
     const loggedInUserInfo = localStorage.getItem('user_profile');
@@ -49,6 +51,10 @@ async function fetchWithToken(url) {
         // Get the author information from the post
         const postAuthor = posts[i].author;
 
+        // Format the created and updated dates using formatDate function
+        const formattedCreatedDate = formatDate(posts[i].created);
+        const formattedUpdatedDate = formatDate(posts[i].updated);
+
         // Check if the logged-in user is the author of the post
         const isAuthor = loggedInUserName === postAuthor.name;
         console.log(isAuthor);
@@ -65,8 +71,8 @@ async function fetchWithToken(url) {
                   <p class="mx-3 pt-3">By:${posts[i].author.name}</p></a>
                   <p class="mx-3">Description: ${posts[i].body}</p></a>
                   <p class="mx-3">Tags: ${posts[i].tags}</p>
-                  <p class="mx-3">Created on: ${posts[i].created}</p>
-                  <p class="mx-3">Updated on: ${posts[i].updated}</p>
+                  <h6 class="mx-3">Created on: ${formattedCreatedDate}</h6>
+                  <h6 class="mx-3">Updated on: ${formattedUpdatedDate}</h6>
                   <div class="container mx-2">
                       <button type="button" class="btn btn-outline-success btn-sm">Like</button>
                       <button type="button" class="btn btn-outline-success btn-sm">Comment</button>
